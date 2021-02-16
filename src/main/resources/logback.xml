@@ -1,0 +1,27 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>false</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="io.micronaut.web" level="trace" />
+    <logger name="io.micronaut.http" level="trace" />
+    <logger name="io.micronaut.http.server.cors" level="trace" />
+    <logger name="io.micronaut.function" level="trace" />
+    <logger name="io.micronaut.management" level="trace" />
+    <logger name="io.micronaut.security" level="trace" />
+    <logger name="io.micronaut.data.query" level="trace" />
+    <logger name="io.micronaut.http.client" level="TRACE"/>
+    <logger name="io.micronaut.websocket" level="TRACE"/>
+    <logger name="io.micronaut.context.condition" level="trace" />
+
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
