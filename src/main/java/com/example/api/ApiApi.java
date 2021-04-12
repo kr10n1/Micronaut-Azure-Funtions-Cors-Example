@@ -25,11 +25,11 @@ import javax.validation.constraints.NotNull;
 @Controller
 public class ApiApi {
 
-    @Get(value = "/api/v1/tenants", produces = { "application/json" })
+    @Get(value = "/v1/tenants", produces = { "application/json" })
     public Single<HttpResponse<List<Tenant>>> apiV1TenantsGet() {
         return Single.fromCallable(() -> {
             System.out.println("test");
-            return HttpResponse.ok();
+            return HttpResponse.ok(List.of(new Tenant().dataParam("data").id("id").label("label")));
         });
     }
 }
